@@ -1,0 +1,11 @@
+Chrome Ubuntu
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+sudo apt-get update
+sudo apt-get install google-chrome-stable
+
+Anydesk
+wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | apt-key add -
+echo "deb http://deb.anydesk.com/ all main" > /etc/apt/sources.list.d/anydesk-stable.list
+apt update
+apt install anydesk
