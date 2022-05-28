@@ -1,7 +1,5 @@
 #swap
-echo Enter size of SWAP in gb
-read size_swap
-fallocate -l ${size_swap}g /swapfile
+fallocate -l 32g /swapfile
 chmod 600 /swapfile
 mkswap /swapfile
 echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
