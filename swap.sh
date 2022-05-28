@@ -1,4 +1,7 @@
-sudo fallocate -l 32G /swapfile
-sudo chmod 600 /swapfile
-sudo mkswap /swapfile
+#!/usr/bin/env bash
+
+fallocate -l 32g /swapfile
+chmod 600 /swapfile
+mkswap /swapfile
+swapon /swapfile
 echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
