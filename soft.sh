@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 #swap
 fallocate -l 32g /swapfile
 chmod 600 /swapfile
