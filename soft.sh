@@ -25,11 +25,11 @@ apt install telegram -y
 #install kernel
 core=5.13
 version=5.13.0-39
-apt install linux-modules-${version}-generic
-apt install linux-hwe-${core}-headers-${version}
-apt install linux-image-${version}-generic
-apt install linux-modules-extra-${version}-generic
-apt install linux-headers-${version}-generic
+apt install linux-modules-${version}-generic -y
+apt install linux-hwe-${core}-headers-${version} -y
+apt install linux-image-${version}-generic -y
+apt install linux-modules-extra-${version}-generic -y
+apt install linux-headers-${version}-generic -y
 
 #hold kernels 
 apt-mark hold linux-generic* linux-image-generic* linux-headers-generic*
