@@ -29,8 +29,17 @@ apt install linux-headers-${version}-generic -y
 #hold kernels 
 apt-mark hold linux-generic* linux-image-generic* linux-headers-generic*
 
-apt upgrade -y
+#wireguard gui
+apt install wireguard git dh-autoreconf libglib2.0-dev intltool build-essential libgtk-3-dev libnma-dev libsecret-1-dev network-manager-dev resolvconf -y
+git clone https://github.com/max-moser/network-manager-wireguard
+cd network-manager-wireguard
+./autogen.sh --without-libnm-glib
+./configure --without-libnm-glib --prefix=/usr --sysconfdir=/etc --libdir=/usr/lib/x86_64-linux-gnu --libexecdir=/usr/lib/NetworkManager --localstatedir=/var
+make
+make install
 
+#install soft
+apt upgrade -y
 apt install google-chrome-stable -y
 apt install anydesk -y
 apt install telegram-desktop -y
