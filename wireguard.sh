@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 apt update
 apt install wireguard git dh-autoreconf libglib2.0-dev intltool build-essential libgtk-3-dev libnma-dev libsecret-1-dev network-manager-dev resolvconf -y
 git clone https://github.com/max-moser/network-manager-wireguard
