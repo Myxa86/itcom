@@ -16,10 +16,6 @@ echo "deb http://deb.anydesk.com/ all main" > /etc/apt/sources.list.d/anydesk-st
 apt purge thunderbird -y
 
 apt update
-apt install google-chrome-stable -y
-apt install anydesk -y
-apt install slack-desktop -y
-apt install telegram -y
 
 #install kernel
 core=5.13
@@ -34,3 +30,8 @@ apt install linux-headers-${version}-generic -y
 apt-mark hold linux-generic* linux-image-generic* linux-headers-generic*
 
 apt upgrade -y
+
+apt install google-chrome-stable -y
+apt install anydesk -y
+apt install telegram-desktop -y
+snap install slack --classic -y
