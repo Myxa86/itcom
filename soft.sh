@@ -45,4 +45,7 @@ apt upgrade -y
 apt install google-chrome-stable -y
 apt install anydesk -y
 apt install telegram-desktop -y
-snap install slack --classic -y
+snap install slack --classic
+
+apt autoremove -y
+apt autoclean -y
