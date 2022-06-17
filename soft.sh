@@ -21,7 +21,7 @@ apt update
 
 #install kernel
 core=5.13
-version=5.13.0-39
+version=5.13.0-44
 apt install linux-modules-${version}-generic -y
 apt install linux-hwe-${core}-headers-${version} -y
 apt install linux-image-${version}-generic -y
