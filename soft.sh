@@ -22,14 +22,16 @@ apt update
 #install kernel
 core=5.13
 version=5.13.0-44
-apt install linux-modules-${version}-generic -y
-apt install linux-hwe-${core}-headers-${version} -y
-apt install linux-image-${version}-generic -y
-apt install linux-modules-extra-${version}-generic -y
-apt install linux-headers-${version}-generic -y
+apt install linux-modules-${version}-generic -y \
+    linux-hwe-${core}-headers-${version} -y \
+    linux-image-${version}-generic -y \
+    linux-modules-extra-${version}-generic -y \
+    linux-headers-${version}-generic -y
 
 #hold kernels 
-apt-mark hold linux-generic* linux-image-generic* linux-headers-generic*
+apt-mark hold linux-generic* \
+    linux-image-generic* \
+    linux-headers-generic*
 
 #wireguard gui
 apt install wireguard git dh-autoreconf libglib2.0-dev intltool build-essential libgtk-3-dev libnma-dev libsecret-1-dev network-manager-dev resolvconf -y
@@ -37,14 +39,13 @@ git clone https://github.com/max-moser/network-manager-wireguard
 cd network-manager-wireguard
 ./autogen.sh --without-libnm-glib
 ./configure --without-libnm-glib --prefix=/usr --sysconfdir=/etc --libdir=/usr/lib/x86_64-linux-gnu --libexecdir=/usr/lib/NetworkManager --localstatedir=/var
-make
-make install
+make && make install
 
 #install soft
 apt upgrade -y
-apt install google-chrome-stable -y
-apt install anydesk -y
-apt install telegram-desktop -y
+apt install google-chrome-stable -y \
+    anydesk -y \
+    telegram-desktop -y
 snap install slack --classic
 
 apt autoremove -y
