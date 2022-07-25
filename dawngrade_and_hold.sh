@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 sudo apt-mark hold linux-headers* \
     linux-hwe* \
     linux-image* \
