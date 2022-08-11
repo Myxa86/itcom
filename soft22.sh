@@ -20,9 +20,8 @@ apt purge thunderbird -y
 apt update
 
 #install kernel
-#core=5.15
-#version=5.15.0-30
-#apt install linux-headers-${version}-generic linux-image-${version}-generic -y
+version=5.15.0-30
+apt install linux-headers-${version}-generic linux-image-${version}-generic -y
 
 #hold kernels 
 apt-mark hold linux-generic* linux-image-generic* linux-headers-generic*
