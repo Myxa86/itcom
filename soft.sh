@@ -22,16 +22,14 @@ apt update
 #install kernel
 core=5.13
 version=5.13.0-51
-apt install linux-modules-${version}-generic -y \
-    linux-hwe-${core}-headers-${version} -y \
-    linux-image-${version}-generic -y \
-    linux-modules-extra-${version}-generic -y \
-    linux-headers-${version}-generic -y
+apt install linux-modules-${version}-generic -y
+apt install linux-hwe-${core}-headers-${version} -y
+apt install linux-image-${version}-generic -y
+apt install linux-modules-extra-${version}-generic -y
+apt install linux-headers-${version}-generic -y
 
 #hold kernels 
-apt-mark hold linux-generic* \
-    linux-image-generic* \
-    linux-headers-generic*
+apt-mark hold linux-*generic*
 
 #wireguard gui
 apt install wireguard resolvconf -y
@@ -44,9 +42,9 @@ apt install wireguard resolvconf -y
 
 #install soft
 apt upgrade -y
-apt install google-chrome-stable -y \
-    anydesk -y \
-    telegram-desktop -y
+apt install google-chrome-stable -y
+apt install anydesk -y
+apt install telegram-desktop -y
 snap install slack --classic
 
 apt autoremove -y
