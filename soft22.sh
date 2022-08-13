@@ -24,7 +24,7 @@ version=5.15.0-30
 apt install linux-headers-${version}-generic linux-image-${version}-generic -y
 
 #hold kernels 
-apt-mark hold linux-generic* linux-image-generic* linux-headers-generic*
+apt-mark hold linux-*generic*
 
 #wireguard gui
 apt install wireguard resolvconf -y
